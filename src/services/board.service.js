@@ -1,6 +1,6 @@
 import { BoardModel } from "../models/board.model..js";
 // import { cloneDeep } from "lodash";
-import * as cloneDeep from "lodash";
+// import * as cloneDeep from "lodash";
 
 const createNew = async (data) => {
    try {
@@ -24,7 +24,7 @@ const getFullBoard = async (boardId) => {
          throw new Error("Board not found!");
       }
 
-      const transformBoard = cloneDeep(board);
+      const transformBoard = { ...board };
 
       /* Filter deleted Columns */
       transformBoard.columns = transformBoard.columns.filter(
